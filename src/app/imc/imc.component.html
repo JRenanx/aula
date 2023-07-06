@@ -1,0 +1,37 @@
+<body>
+    <div class="container">
+        <h1>Calculadora de IMC</h1>
+
+        <form id="imcForm">>
+            <div class="form-group">
+                <label for="txtNome">Nome:</label>
+                <input type="text" id="txtNome" name="txtNome" [(ngModel)] = "nome"
+                    required>
+            </div>
+
+            <label for="sexo">Sexo:</label>
+            <select id="txtSexo" name="sexo" required>
+                <option value="" disabled selected>Selecione o sexo</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminio">Feminino</option>
+            </select>
+
+            <div class="form-group">
+                <label for="txtpeso">Peso:</label>
+                <input type="number" id="txtPeso" name="txtPeso" [(ngModel)] = "peso" 
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="txtAltura">Altura:</label>
+                <input step="0.01" type="number" id="txtAltura" name="txtAltura"
+                [(ngModel)] = "altura" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary" (click) = "calculaImc()" >AVALIAR</button>
+            <br />
+
+            <textarea readonly="true" [(ngModel)] = "nome" id="txtDados" cols="30" rows="10"></textarea>
+
+        </form>
+    </div>
+</body>

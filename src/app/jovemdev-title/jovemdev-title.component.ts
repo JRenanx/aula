@@ -5,16 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './jovemdev-title.component.html',
   styleUrls: ['./jovemdev-title.component.scss']
 })
-export class JovemdevTitleComponent implements OnInit {
+export class JovemdevTitleComponent {
 
-  public title: string = "Jovem Dev";
+  public title: string = "Programa Jovem Dev";
 
-  ngOnInit(): void {
-    let h = new Date().getHours();
-    if (h < 12) {
-      this.title += " Matutino"
-    } else {
-      this.title += " Vespertino"
-    }
-  }
+  public img: string = "https://www.triersistemas.com.br/";
+
+
 }

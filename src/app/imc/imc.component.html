@@ -1,37 +1,39 @@
-<body>
-    <div class="container">
-        <h1>Calculadora de IMC</h1>
-
-        <form id="imcForm">>
+<div class="container">
+    <h1 class="title">Calculadora de IMC</h1>
+    <form>
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input [(ngModel)]="nome" type="text" id="nome" name="nome" placeholder="Digite seu nome:">
+        </div>
+        <div class="form-group">
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade">
+        </div>
+        <div class="form-group">
+            <label>Sexo:</label>
+            <label for="sexo-m">
+                <input [(ngModel)]="sexo" type="radio" id="sexo-m" name="sexo" value="M"> Masculino
+            </label>
+            <label for="sexo-f">
+                <input [(ngModel)]="sexo" type="radio" id="sexo-f" name="sexo" value="F"> Feminino
+            </label>
+        </div>
+        <div class="form-group-inline">
             <div class="form-group">
-                <label for="txtNome">Nome:</label>
-                <input type="text" id="txtNome" name="txtNome" [(ngModel)] = "nome"
-                    required>
-            </div>
-
-            <label for="sexo">Sexo:</label>
-            <select id="txtSexo" name="sexo" required>
-                <option value="" disabled selected>Selecione o sexo</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Feminio">Feminino</option>
-            </select>
-
-            <div class="form-group">
-                <label for="txtpeso">Peso:</label>
-                <input type="number" id="txtPeso" name="txtPeso" [(ngModel)] = "peso" 
-                    required>
+                <label for="peso">Peso:</label>
+                <input [(ngModel)]="peso" type="text" id="peso" name="peso">
             </div>
             <div class="form-group">
-                <label for="txtAltura">Altura:</label>
-                <input step="0.01" type="number" id="txtAltura" name="txtAltura"
-                [(ngModel)] = "altura" required>
+                <label for="altura">Altura:</label>
+                <input [(ngModel)]="altura" type="text" id="altura" name="altura">
             </div>
-
-            <button type="submit" class="btn btn-primary" (click) = "calculaImc()" >AVALIAR</button>
-            <br />
-
-            <textarea readonly="true" [(ngModel)] = "nome" id="txtDados" cols="30" rows="10"></textarea>
-
-        </form>
-    </div>
-</body>
+        </div>
+        <div class="form-button">
+            <button type="button" (click)="avaliar()" [disabled]="camposPreenchidos()"
+                [ngClass]="{'green-button': camposPreenchidos()}">Avaliar!</button>
+        </div>
+        <div class="form-group">
+            <textarea id="resultado" readonly name="resultado" [(ngModel)]="resultado"></textarea>
+        </div>
+    </form>
+</div>

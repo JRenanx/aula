@@ -6,35 +6,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./imc.component.scss']
 })
 export class ImcComponent {
-  public nome: string = "";
-  public sexo: string = "";
-  public peso: number = 0;
-  public altura: number = 0;
 
+  public nome!: string;
+  public peso!: number;
+  public sexo!: string;
+  public altura!: number;
+  public imc!: number;
+  public resultado!: string;
 
-  public calculaImc() {
-    imc = this.peso / this.altura ** 2;
-    const classificacao = this.classificaIMC(imc);
-    const resultado = `Nome: ${this.nome}<br/>
-                       Sexo: ${this.sexo}<br/>
-                       IMC: ${imc.toFixed(2)}<br/>
-                       Classificação: ${classificacao}`;
-    var imc = this.peso / (this.altura * this.altura);
+  public camposPreenchidos(): boolean {
+    return this.nome == "" || this.nome == null ||
+      this.peso == null || this.peso == 0 ||
+      this.altura == null || this.altura == 0 ||
+      this.sexo == undefined;
   }
-  classificaIMC(imc: number): string {
-    if (imc < 18.5) {
-      return 'Abaixo do peso';
-    } else if (imc < 25) {
-      return 'Peso normal';
-    } else if (imc < 30) {
-      return 'Sobrepeso';
-    } else if (imc < 35) {
-      return 'Obesidade grau 1';
-    } else if (imc < 40) {
-      return 'Obesidade grau 2';
+
+  public avaliar() {
+    this.imc = this.peso / (this.altura ** 2);
+    if (this.sexo == "M" && this.imc < 19 || this.sexo == "F" && this.imc < 18) {
+      this.resultado = 'Você está está abaixo do peso ideal'
+    } else if (this.sexo == "M" && this.imc < 25 || this.sexo == "F" && this.imc < 24) {
+      this.resultado = 'Você está está no ideal'
+    } else if (this.sexo == "M" && this.imc < 32 || this.sexo == "F" && this.imc < 29) {
+      this.resultado = 'Você está está acima do ideal'
     } else {
-      return 'Obesidade grau 3';
+      this.resultado = 'Você está está em grau de obesidade'
     }
   }
-}
 
+}

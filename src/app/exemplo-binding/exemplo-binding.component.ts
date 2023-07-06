@@ -24,7 +24,7 @@ export class ExemploBindingComponent {
 
   public urlImg(): string {
     if(this.n1 + this.n2 > 50){
-      return "https://static.poder360.com.br/2022/08/macaco-848x477.jpg";
+      return "https://www.teusonhar.com.br/wp-content/uploads/2013/10/sonhar-com-macaco.jpg";
     }else{
       return "https://i0.statig.com.br/bancodeimagens/by/nu/8w/bynu8wj7239xajxe5y6cg952y.jpg";
     }

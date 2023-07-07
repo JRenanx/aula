@@ -1,3 +1,44 @@
 <div class="container">
-    <h1>Ng Switch</h1>
-</div>
+  <h1>Ng Switch</h1>
+
+  <div>
+    <div>
+      <label for="txt">RL Switch: </label>
+      <input type="text" id="switch" [(ngModel)]="switch">
+      <div [ngSwitch]="switch">
+        <p *ngSwitchCase="1">
+          <img src="https://rocketleague.media.zestyio.com/rl_home_f2p-launch_cross_10656.jpg?width=1920&fit=bounds">
+        </p>
+        <p *ngSwitchCase="2">
+          <img
+            src="https://rocketleague.media.zestyio.com/rl_s11_tierslider_41-50_1.ryA3Cmtr3.jpg?width=1920&optimize=high">
+        </p>
+        <p *ngSwitchCase="3">
+          <img
+            src="https://rocketleague.media.zestyio.com/rl_s11_tierslider_51-60_6.HkTp0Xtrn.jpg?width=1920&optimize=high">
+        </p>
+        <p *ngSwitchCase="4">
+          <img
+            src="https://rocketleague.media.zestyio.com/rl_s11_tierslider_1-10_6.S1SOC7Fr2.jpg?width=1920&optimize=high">
+        </p>
+        <p *ngSwitchCase="5">
+          <img src="https://rocketleague.media.zestyio.com/rl_Pele_CoreAsset.jpg">
+        </p>
+        <p *ngSwitchCase="6">
+          <img
+            src="https://img.olympicchannel.com/images/image/private/t_s_pog_staticContent_hero_sm_2x/f_auto/primary/qf91enynlq3hlgtkmbon">
+        </p>
+        <p *ngSwitchCase="7">
+          <img
+            src="https://imagens.ebc.com.br/FLJdpzfzSFiQ-2U0bxz2MzkVOXI=/1600x800/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/_macaco-prego-do-peito-amarelo_bioparque-rio1111202706.jpg?itok=aI72ml0o">
+        </p>
+        <p *ngSwitchCase="8">
+          <img src="https://s5.static.brasilescola.uol.com.br/be/2021/02/macaco-aranha-de-cara-preta.jpg">
+        </p>
+        <p *ngSwitchCase="9">
+          <img
+            src="https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRrLA3Z29zMZ5lkDSSPUXPmiW5m9xZRzOOh8kh5K_yabG6lbchgXJ_Hen28TinMo80-">
+        </p>
+      </div>
+    </div>
+  </div>

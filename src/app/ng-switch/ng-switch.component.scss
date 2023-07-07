@@ -1,12 +1,20 @@
 .container {
-    width: 500px;
+    width: 800px;
     margin: 0 auto;
     padding: 25px;
     background-color: rgb(230, 230, 230);
     border-radius: 10px;
     box-shadow: 0 5px 70px rgba(0, 0, 0, 0.3);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h1 {
     text-align: center;
+}img {
+    width: 800px;
+}
+
+label{
+    font-size: 18px;
+    font-style: italic;
 }

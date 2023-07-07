@@ -26,11 +26,11 @@ export class ImcComponent {
     if (this.sexo == "M" && this.imc < 19 || this.sexo == "F" && this.imc < 18) {
       this.resultado = 'Você está está abaixo do peso ideal'
     } else if (this.sexo == "M" && this.imc < 25 || this.sexo == "F" && this.imc < 24) {
-      this.resultado = 'Você está está no ideal'
+      this.resultado = 'Você está no peso ideal'
     } else if (this.sexo == "M" && this.imc < 32 || this.sexo == "F" && this.imc < 29) {
-      this.resultado = 'Você está está acima do ideal'
+      this.resultado = 'Você está acima do peso ideal'
     } else {
-      this.resultado = 'Você está está em grau de obesidade'
+      this.resultado = 'Você está em grau de obesidade'
     }
   }
 

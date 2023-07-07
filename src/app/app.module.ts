@@ -15,6 +15,9 @@ import { NgForComponent } from './ng-for/ng-for.component';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { MicroondasComponent } from './microondas/microondas.component';
+import { PipesPipe } from './pipes.pipe';
+import { InvertePipesPipe } from './inverte-pipes.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { NavigationComponent } from './navigation/navigation.component';
     NgForComponent,
     NgSwitchComponent,
     PipesComponent,
-    NavigationComponent
+    NavigationComponent,
+    MicroondasComponent,
+    PipesPipe,
+    InvertePipesPipe
   ],
   imports: [
     BrowserModule,

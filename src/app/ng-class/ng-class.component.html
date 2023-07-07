@@ -1,3 +1,6 @@
 <div class="container">
-    <h1>Ng Class</h1>
+    <h1 [ngClass]="{'azul': valor, 'vermelho':!valor,}"></h1>
+    <div class="carro">
+        <img [src]="urlImg()" alt="">
+    </div>
 </div>

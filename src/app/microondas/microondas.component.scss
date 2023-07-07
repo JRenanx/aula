@@ -1,0 +1,53 @@
+.container {
+    width: 340px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    box-shadow: 0 5px 70px rgba(0, 0, 0, 0.3);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.microwave-panel {
+    width: 300px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.display {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #ffef09;
+    padding: 10px;
+    background-color: #0a0a0a;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+
+button {
+    padding: 10px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #999;
+}

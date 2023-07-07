@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class NgIfComponent {
 
+  containerAmarelo: boolean = false;
+  containerVermelho: boolean = false;
+
+  public clickAmarelo() {
+    this.containerAmarelo = !this.containerAmarelo;
+  }
+  public clickVermelho() {
+    this.containerVermelho = !this.containerVermelho;
+  }
 }
+

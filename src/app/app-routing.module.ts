@@ -9,6 +9,7 @@ import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgForComponent } from './ng-for/ng-for.component';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { MicroondasComponent } from './microondas/microondas.component';
 
 const routes: Routes = [
   { path: "bindings", component: ExemploBindingComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: "ng-For", component: NgForComponent },
   { path: "ng-switch", component: NgSwitchComponent },
   { path: "pipes", component: PipesComponent },
+  { path: "Microondas", component: MicroondasComponent },
 
 ];
 

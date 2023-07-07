@@ -8,9 +8,8 @@ body {
 }
 
 #menuToggle {
-    display: block;
-    position: relative;
-    top: 75px;
+    position: fixed;
+    top: 175px;
     left: 50px;
     -webkit-user-select: none;
     user-select: none;
@@ -83,16 +82,16 @@ body {
 
 #menu {
     position: absolute;
-    width: 300px;
+    width: 200px;
     margin: -100px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
     background: #ededed;
     list-style-type: none;
-    -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
     transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #menu li {
@@ -103,4 +102,24 @@ body {
 
 #menuToggle input:checked~ul {
     transform: none;
+}
+
+
+ul a {
+    display: block;
+    color: white;
+    width: 200px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+
+    &:not(.linkActive):hover {
+        transition: 0.3s;
+    }
+
+    &.linkActive {
+        opacity: 0.5;
+        cursor: default;
+    }
+
 }

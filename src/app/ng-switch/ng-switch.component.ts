@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./ng-switch.component.scss']
 })
 export class NgSwitchComponent {
+ public switch!: number;
+
+ 
+
 
 }
+

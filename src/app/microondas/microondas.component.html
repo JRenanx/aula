@@ -1,25 +1,28 @@
 <div class="container">
-    <div class="microwave-panel">
-        <h2>Microondas</h2>
-       
-        <div class="display">
-          <p id="display">{{ displayTime }}</p>
-        </div>
-       
-        <div class="buttons">
-          <button (click)="updateTime('1')">1</button>
-          <button (click)="updateTime('2')">2</button>
-          <button (click)="updateTime('3')">3</button>
-          <button (click)="updateTime('4')">4</button>
-          <button (click)="updateTime('5')">5</button>
-          <button (click)="updateTime('6')">6</button>
-          <button (click)="updateTime('7')">7</button>
-          <button (click)="updateTime('8')">8</button>
-          <button (click)="updateTime('9')">9</button>
-          <button (click)="updateTime('0')">0</button>
-          <button (click)="updateTime('Start')">Iniciar</button>
-          <button (click)="updateTime('Cancel')">Cancelar</button>
-        </div>
+  <div class="microwave-panel">
+      <h2>Microondas</h2>
+      <br/>
+     
+      <div class="display">
+        <p id="display">{{ displayTimer() }}</p>
       </div>
      
+      <div class="buttons">
+        <button (click)="addNumber(1)">1</button>
+        <button (click)="addNumber(2)">2</button>
+        <button (click)="addNumber(3)">3</button>
+        <button (click)="addNumber(4)">4</button>
+        <button (click)="addNumber(5)">5</button>
+        <button (click)="addNumber(6)">6</button>
+        <button (click)="addNumber(7)">7</button>
+        <button (click)="addNumber(8)">8</button>
+        <button (click)="addNumber(9)">9</button>
+        <button (click)="addNumber(0)">0</button>
+        <button (click)="add30Seconds()">+30 seg</button>
+        <button (click)="add1Minute()">+1 min</button>
+        <button id="start" (click)="startTimer(timer)">Iniciar</button>
+        <button id="cancel" (click)="resetTimer()" >Cancelar</button>
+      </div>
+    </div>
+   
 </div>

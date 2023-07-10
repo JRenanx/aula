@@ -5,66 +5,57 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './microondas.component.html',
   styleUrls: ['./microondas.component.scss']
 })
-export class MicroondasComponent{
+export class MicroondasComponent {
+
+  public timer: number = 0;
+  public isRunning: boolean = false;
+  public interval: any;
 
 
-  displayTime = '00:00';
-  timer: any;
-
-
-  updateTime(buttonValue: string) {
-    if (buttonValue === 'Start') {
-      if (this.displayTime !== '00:00') {
-        this.startTimer();
-      }
-    } else if (buttonValue === 'Cancel') {
-      this.resetTimer();
-    } else {
-      this.updateDisplayTime(buttonValue);
+  addNumber(number: number) {
+    if (!this.isRunning) {
+      this.timer = this.timer * 10 + number;
     }
   }
 
-
-  startTimer() {
-    const timeArray = this.displayTime.split(':');
-    const minutes = parseInt(timeArray[0], 10);
-    const seconds = parseInt(timeArray[1], 10);
-    let totalSeconds = minutes * 60 + seconds;
-
-
-    this.timer = setInterval(() => {
-      totalSeconds--;
-
-
-      if (totalSeconds <= 0) {
-        this.resetTimer();
-      }
-
-
-      const newMinutes = Math.floor(totalSeconds / 60);
-      const newSeconds = totalSeconds % 60;
-      this.displayTime = `${this.formatTime(newMinutes)}:${this.formatTime(newSeconds)}`;
-    }, 1000);
+  add30Seconds() {
+    this.timer += 3 * 10;
   }
 
+  add1Minute() {
+    this.timer += 6 * 10;
+  }
 
   resetTimer() {
-    clearInterval(this.timer);
-    this.displayTime = '00:00';
+    clearInterval(this.interval);
+    this.isRunning = false;
+    this.timer = 0;
   }
 
 
-  updateDisplayTime(buttonValue: string) {
-    if (this.displayTime === '00:00') {
-      this.displayTime = buttonValue;
-    } else if (this.displayTime.length < 4) {
-      this.displayTime += buttonValue;
+  startTimer(timeInSeconds: number) {
+    if (!this.isRunning && timeInSeconds > 0) {
+      this.timer = timeInSeconds;
+      this.isRunning = true;
+      this.interval = setInterval(() => {
+        this.timer--;
+        if (this.timer <= 0) {
+          this.resetTimer();
+        }
+      }, 1000);
     }
   }
 
 
-  formatTime(time: number): string {
-    return time < 10 ? `0${time}` : `${time}`;
+  displayTimer(): string {
+    let minutes = Math.floor(this.timer / 60);
+    let seconds = this.timer % 60;
+
+    return `${this.padNumber(minutes)}:${this.padNumber(seconds)}`;
+  }
+
+
+  padNumber(number: number): string {
+    return number.toString().padStart(2, '0');
   }
 }
-

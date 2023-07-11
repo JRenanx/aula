@@ -18,6 +18,12 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { MicroondasComponent } from './microondas/microondas.component';
 import { PipesPipe } from './pipes.pipe';
 import { InvertePipesPipe } from './inverte-pipes.pipe';
+import { MdPaiFilhoModule } from './md-pai-filho/md-pai-filho.module';
+import { MdFilhoPaiModule } from './md-filho-pai/md-filho-pai.module';
+import { CpBComponent } from './md-service/service/cp-b/cp-b.component';
+import { CpAComponent } from './md-service/service/cp-a/cp-a.component';
+import { CpAgrupadorComponent } from './md-service/service/cp-agrupador/cp-agrupador.component';
+import { MdAtvModuloModule } from './md-atv-modulo/md-atv-modulo.module';
 
 @NgModule({
   declarations: [
@@ -35,12 +41,19 @@ import { InvertePipesPipe } from './inverte-pipes.pipe';
     NavigationComponent,
     MicroondasComponent,
     PipesPipe,
-    InvertePipesPipe
+    InvertePipesPipe,
+    CpBComponent,
+    CpAComponent,
+    CpAgrupadorComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MdPaiFilhoModule,
+    MdFilhoPaiModule,
+    MdAtvModuloModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

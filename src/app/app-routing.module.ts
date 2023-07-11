@@ -10,6 +10,12 @@ import { NgForComponent } from './ng-for/ng-for.component';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { MicroondasComponent } from './microondas/microondas.component';
+import { CpPaiComponent } from './md-pai-filho/cp-pai/cp-pai.component';
+import { CpPaiComponent as CpPaiComponent2 } from './md-filho-pai/cp-pai/cp-pai.component';
+import { CpAgrupadorComponent } from './md-service/service/cp-agrupador/cp-agrupador.component';
+import { CpTelaComponent } from './md-atv-modulo/cp-tela/cp-tela.component';
+
+
 
 const routes: Routes = [
   { path: "bindings", component: ExemploBindingComponent },
@@ -22,6 +28,10 @@ const routes: Routes = [
   { path: "ng-switch", component: NgSwitchComponent },
   { path: "pipes", component: PipesComponent },
   { path: "Microondas", component: MicroondasComponent },
+  { path: "pai-Filho", component: CpPaiComponent },
+  { path: "filho-Pai", component: CpPaiComponent2 },
+  { path: "agrupador", component: CpAgrupadorComponent },
+  { path: "cp-table", component: CpTelaComponent }
 
 ];
 

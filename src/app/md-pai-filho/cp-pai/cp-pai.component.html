@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Componente Pai</h1>
+
+    <div>
+        <p>Modelo:</p>
+        <input [(ngModel)]="carro.modelo">
+    </div>
+    <div>
+        <p>Ano:</p>
+        <input [(ngModel)]="carro.ano" type="number">
+    </div>
+    <div>
+        <p>Cor:</p>
+        <input [(ngModel)]="carro.cor">
+    </div>
+
+    <app-cp-filho [carroFilho]="carro"></app-cp-filho>
+</div>

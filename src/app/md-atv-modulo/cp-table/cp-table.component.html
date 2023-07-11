@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Tabela</h1>
+    <div>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Preco</th>
+            </tr>
+            <tr *ngFor="let medicine of medicines">
+                <td (click)="getMedicine(medicine)">{{medicine.nome}} </td>
+                <td>{{medicine.preco}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

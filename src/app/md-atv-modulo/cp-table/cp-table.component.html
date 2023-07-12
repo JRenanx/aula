@@ -6,9 +6,9 @@
                 <th>Nome</th>
                 <th>Preco</th>
             </tr>
-            <tr *ngFor="let medicine of medicines">
-                <td (click)="getMedicine(medicine)">{{medicine.nome}} </td>
-                <td>{{medicine.preco}}</td>
+            <tr *ngFor="let medicine of list" (click)="showMedicine(medicine)">
+                <td>{{medicine.name}} </td>
+                <td>{{medicine.price}}</td>
             </tr>
         </table>
     </div>

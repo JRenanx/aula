@@ -12,36 +12,8 @@ h1 {
     text-align: center;
 }
 
-.divAmarelo{
-    background-color: yellow;
-    width: 300px;
-    height: 300px;
-    box-sizing: border-box;
-    border: 2px solid black;
-    border-radius: 15px;
-    margin: 5px;
-  }
-  
-  .divVermelho{
-    background-color: red;
-    width: 300px;
-    height: 300px;
-    box-sizing: border-box;
-    border: 2px solid black;
-    border-radius: 15px;
-    margin: 5px;
-  }
-  
-  button{
-    background-color: black;
-    font-size: 24px;
-    color: gold;
-    padding: 10px;
-    cursor: pointer;
-    margin: 5px;
-  }
-
-  .containerPai{
-    display: flex;
-    align-content: space-between;
-  }
+form{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}

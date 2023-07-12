@@ -1,26 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../services/services.service';
+import { NgControl } from '@angular/forms';
 
 @Component({
   selector: 'app-cp-form',
   templateUrl: './cp-form.component.html',
   styleUrls: ['./cp-form.component.scss']
 })
-export class CpFormComponent {
-  public name!: string ;
-  public price!: number;
-
+export class CpFormComponent implements OnInit {
+  
+  public medList = {
+    name: "",
+    price: null
+  }
 
   constructor(private service: ServicesService) { }
 
-  public addMedicine() {
-    const newMedicine = { nome: this.name, preco: this.price };
-    return this.service.add(newMedicine);
+  ngOnInit(): void {
+    this.service.emitEvent.subscribe({
+      next: (res: any) => this.medList = res
+    })
+  }
+  public addItem(valor: any) {
+    let list = {
+      name: valor.name,
+      price: valor.price
+    }
+    this.medList = {
+      name: "",
+      price: null
+    }
+    return this.service.add(list)
   }
 
-  public selectedMedicne() {
-    const medicine = this.service.showMedicine();
-    this.name = medicine.nome;
-    this.price = medicine.preco;
-  }
 }

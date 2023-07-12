@@ -5,27 +5,32 @@ import { EventEmitter, Injectable } from '@angular/core';
 })
 export class ServicesService {
 
-  public emitEvent = new EventEmitter();
-  private medicine: Array<any> = [];
-  private medSelected: any;
-
   constructor() { }
 
-  public getLista() {
-    return this.medicine;
+  public emitEvent = new EventEmitter();
+
+
+  private list: Array<{ name: string, price: number }> = [];
+
+  private medicine = {
+    name: "",
+    price: null
   }
 
-  public add(medicamento: any) {
-    this.medicine.push(medicamento);
-    return this.medicine;
+
+  public getList() {
+    return this.list;
   }
 
-  public getMedicine(medicament: any) {
-    this.getMedicine = medicament;
-    return this.getMedicine;
+
+  public getMedcine(medicine: any) {
+    this.medicine.name = medicine.name;
+    this.medicine.price = medicine.price;
+    this.emitEvent.emit(this.medicine)
+    console.log(medicine)
   }
 
-  public showMedicine() {
-    return this.medSelected;
+  public add(valor: any) {
+    this.list.push(valor);
   }
 }

@@ -8,21 +8,15 @@ import { ServicesService } from '../services/services.service';
 })
 export class CpTableComponent implements OnInit {
 
-  public medicines: Array<any> = [];
-  public medicine = {
-    name: "",
-    price: 0,
-  }
+  public list: Array<{ name: string, price: number }> = [];
 
   constructor(private service: ServicesService) { }
 
-  ngOnInit(): void {
-    this.medicines = this.service.getLista();
+  showMedicine(medicamento: any) {
+    this.service.getMedcine(medicamento)
   }
-
-  public getMedicine(medSelected: any) {
-    this.getMedicine = medSelected;
-    return this.service.getMedicine(this.medicine);
+  ngOnInit(): void {
+    this.list = this.service.getList();
   }
 }
 

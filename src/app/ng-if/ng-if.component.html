@@ -1,10 +1,25 @@
-<div class="container">
-    <h1>Ng If</h1>
-    <div class="containerPai">
-        <div *ngIf="containerAmarelo" class="divAmarelo"></div>
-        <div *ngIf="containerVermelho" class="divVermelho"></div>
+<main class="container">
+    <h1>Ng-If</h1>
+    <form action="" class="form">
+        <legend>Escolhe Hitbox</legend>
+        <label for="estilos">Carros </label>
+        <select name="estilos" id="estilos" [(ngModel)]="carro.hitbox">
+            <option value="octane">Octane</option>
+            <option value="dominus">Dominus</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="merc">Merc</option>
+            <option value="breakout">Breakout</option>
+            <option value="plank">Plank</option>
+        </select>
+    </form>
+    <div class="personagem" *ngIf="carro.hitbox != ''">
+        <img *ngIf="carro.hitbox == 'octane'" src="https://prod.assets.earlygamecdn.com/images/Rocket-League-Black-History-Month-2023.jpg?transform=article3x_webp" alt="" width="500px">
+        <img *ngIf="carro.hitbox == 'dominus'" src="https://prod.assets.earlygamecdn.com/images/rocket-league-titanium-white-dominus-thumbnail.jpg?transform=article3x_webp" alt="" width="500px">
+        <img *ngIf="carro.hitbox == 'hybrid'" src="https://videogamemods.com/rocketleague/wp-content/uploads/sites/12/cmdm/169694/1540284023_Skyline-1-1600x867.png" alt="" width="500px">
+        <img *ngIf="carro.hitbox == 'merc'" src="https://psverso.com.br/wp-content/uploads/2022/11/codigos-rocket-league-768x432.webp" alt="" width="500px">
+        <img *ngIf="carro.hitbox == 'breakout'" src="https://wallpapers.com/images/hd/violet-breakout-rocket-league-car-2k-qpjipx3xfron6ow3.jpg" alt="" width="500px">
+        <img *ngIf="carro.hitbox == 'plank'" src="https://rocketleague.media.zestyio.com/rl_hh_st_item-screenshots_boost-autumn.jpg" alt="" width="500px">
+        <div class="status">
+        </div>
     </div>
-    
-    <button (click)="clickAmarelo()">Amarelo</button>
-    <button (click)="clickVermelho()">Vermelho</button>
-</div>
+</main>

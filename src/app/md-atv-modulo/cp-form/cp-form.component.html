@@ -2,15 +2,15 @@
     <h1>Medicamento</h1>
     <div>
         <label for="nome">Nome:</label>
-        <input placeholder="ex: Diazepam" id="nome" [(ngModel)]="name">
+        <input placeholder="ex: Diazepam" id="nome" [(ngModel)]="medList.name">
 
     </div>
     <div>
         <label for="preco">Preço:</label>
-        <input placeholder="ex: 39,90" id="preco" [(ngModel)]="price">
+        <input placeholder="ex: 39,90" id="preco" [(ngModel)]="medList.price" type="number">
 
     </div>
     <div>
-        <button (click)="addMedicine()">Cadastrar</button>
+        <button (click)="addItem(medList)">Cadastrar</button>
     </div>
 </div>
